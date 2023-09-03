@@ -4,6 +4,10 @@ body {
   background-color:  #eae6f5;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .layout_padding {
   padding-top: 90px;
   padding-bottom: 90px;
