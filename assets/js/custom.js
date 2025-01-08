@@ -2,8 +2,7 @@ $(document).ready(function () {
     "use strict";
 
     /*==================================
-* Author        : "ThemeSine"
-* Template Name : Khanas HTML Template
+* Author        : "Priyadarshini Sharma"
 * Version       : 1.0
 ==================================== */
 
@@ -215,4 +214,51 @@ $(document).ready(function () {
     }
 
     type();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Target the timeline list and items
+    const timelineItems = document.querySelectorAll(".main-timeline > ul > li");
+    const showMoreBtn = document.createElement("button");
+
+    // Add the "Show More" button after the UTD master's section
+    showMoreBtn.className = "show-more-btn";
+    showMoreBtn.innerHTML = '<i class="fa fa-angle-down"></i>';
+    timelineItems[1].parentNode.appendChild(showMoreBtn);
+
+    // Hide all items after the second one (i.e., UTD master's)
+    for (let i = 2; i < timelineItems.length; i++) {
+        timelineItems[i].classList.add("hidden-section");
+    }
+
+    // Add click event to toggle visibility
+    showMoreBtn.addEventListener("click", function () {
+        const hiddenItems = document.querySelectorAll(".hidden-section");
+        if (hiddenItems[0].style.display === "none" || hiddenItems[0].style.display === "") {
+            hiddenItems.forEach(item => (item.style.display = "block"));
+            showMoreBtn.innerHTML = '<i class="fa fa-angle-up"></i>';
+        } else {
+            hiddenItems.forEach(item => (item.style.display = "none"));
+            showMoreBtn.innerHTML = '<i class="fa fa-angle-down"></i>';
+        }
+    });
+});
+
+// Scrolling effct
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all sections with the 'scroll-effect' class
+    const sections = document.querySelectorAll('.scroll-effect');
+
+    // Create Intersection Observer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate'); // Add animation class
+                observer.unobserve(entry.target); // Optional: Stop observing once animated
+            }
+        });
+    }, { threshold: 0.2 }); // Adjust threshold if needed
+
+    // Observe each section
+    sections.forEach(section => observer.observe(section));
 });
