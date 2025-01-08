@@ -1,6 +1,5 @@
 /*==================================
 * Author        : "Priyadarshini Sharma"
-* Template Name :  Browny  HTML Template
 * Version       : 1.0
 ==================================== */
 
@@ -94,6 +93,18 @@ html,body{
 
 .fix{position: relative;clear: both;}
 /*=============Style css=========*/
+
+/* Fade in and slide up animation */
+.scroll-effect {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Offset downwards */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-effect.animate {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
 
 /*-------------------------------------
         2. Header
@@ -353,6 +364,30 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 /*-------------------------------------
         5.  Education and Experience
 -------------------------------------*/
+.show-more-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #007bff;
+    border-radius: 50%; /* Makes it circular */
+    background: #fff;
+    color: #007bff;
+    font-size: 1.5em;
+    line-height: 45px; /* Centers the icon vertically */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+.hidden-section {
+    display: none; /* Hide content initially */
+}
 
 .experience {
     padding: 50px 0 100px;
@@ -519,6 +554,82 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
    margin-left: 0;
 }
 
+/*-------------------------------------
+        New Skill
+--------------------------------------*/
+
+/* General Section Styles */
+.skills {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 60px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Skill Categories */
+.single-skill-content {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-skill-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.category-heading {
+    font-size: 1.8rem;
+    color: #495057;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Skill List */
+.skill-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-list li {
+    font-size: 1.1rem;
+    color: #212529;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.skill-list li span {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Certifications Section */
+.single-skill-content ul li {
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+.single-skill-content ul li:hover {
+    color: #3f9fff;
+    cursor: pointer;
+    font-size: large;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /*-------------------------------------
         7. Portfolio
